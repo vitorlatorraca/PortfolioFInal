@@ -7,17 +7,18 @@ export const projectsData = [
         image: Work1,
         title: 'Major Assingment CSS',
         category: 'web',
-        demoUrl: 'https://www.globo.com' // URL do demo do primeiro projeto
-    },
-
-   /* {
-        id: 2,
-        image: Work2,
-        title: 'Web design',
-        category: 'web',
+        demoUrl: 'https://github.com/vitorlatorraca/Major_Assingment_CSS'
     },
 
     {
+        id: 2,
+        image: Work2,
+        title: 'Tic Tac Toe Game',
+        category: 'web',
+        demoUrl: 'https://github.com/vitorlatorraca/TicTacToe'
+    },
+
+   /* {
         id: 3,
         image: Work3,
         title: 'Web design',
