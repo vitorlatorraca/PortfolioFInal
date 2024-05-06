@@ -1,4 +1,4 @@
-import Work1 from "../../assets/work1.jpg"
+import Work1 from "../../assets/work1.jpg";
 
 
 export const projectsData = [
@@ -7,6 +7,7 @@ export const projectsData = [
         image: Work1,
         title: 'Major Assingment CSS',
         category: 'web',
+        demoUrl: 'https://www.globo.com' // URL do demo do primeiro projeto
     },
 
    /* {
