@@ -5,10 +5,10 @@ import Work3 from "../../assets/work3.png";
 export const projectsData = [
     {
         id: 1,
-        image: Work1,
-        title: 'Major Assingment CSS',
+        image: Work3,
+        title: 'Coffee Delivery Website',
         category: 'web',
-        demoUrl: 'https://github.com/vitorlatorraca/Major_Assingment_CSS'
+        demoUrl: 'https://github.com/vitorlatorraca/coffeDelivery'
     },
 
     {
@@ -21,10 +21,10 @@ export const projectsData = [
 
    {
         id: 3,
-        image: Work3,
-        title: 'Coffee Delivery Website',
+        image: Work1,
+        title: 'Major Assingment CSS',
         category: 'design',
-        demoUrl: 'https://github.com/vitorlatorraca/coffeDelivery'
+        demoUrl: 'https://github.com/vitorlatorraca/Major_Assingment_CSS'
     },
 
      /*{
