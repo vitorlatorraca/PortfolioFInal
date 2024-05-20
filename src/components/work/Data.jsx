@@ -1,7 +1,6 @@
 import Work1 from "../../assets/work1.jpg";
 import Work2 from "../../assets/work2.jpg";
-
-
+import Work3 from "../../assets/work3.png";
 
 export const projectsData = [
     {
@@ -20,14 +19,15 @@ export const projectsData = [
         demoUrl: 'https://github.com/vitorlatorraca/TicTacToe'
     },
 
-   /* {
+   {
         id: 3,
         image: Work3,
-        title: 'Web design',
+        title: 'Coffee Delivery Website',
         category: 'design',
+        demoUrl: 'https://github.com/vitorlatorraca/coffeDelivery'
     },
 
-    {
+     /*{
         id: 4,
         image: Work4,
         title: 'Web design',
