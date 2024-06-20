@@ -33,7 +33,7 @@ export const projectsData = [
         id: 4,
         image: Work4,
         title: 'Web design',
-        category: 'app',
+        category: 'design',
         demoUrl: 'https://github.com/vitorlatorraca/Major_Assingment_CSS'
     },
 
