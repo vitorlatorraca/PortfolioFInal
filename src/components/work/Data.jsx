@@ -1,6 +1,8 @@
 import Work1 from "../../assets/work1.jpg";
 import Work2 from "../../assets/work2.jpg";
 import Work3 from "../../assets/work3.png";
+import Work4 from "../../assets/work4.jpg";
+import
 
 export const projectsData = [
     {
@@ -27,7 +29,7 @@ export const projectsData = [
         demoUrl: 'https://github.com/vitorlatorraca/Major_Assingment_CSS'
     },
 
-     /*{
+     {
         id: 4,
         image: Work4,
         title: 'Web design',
@@ -39,7 +41,7 @@ export const projectsData = [
         image: Work5,
         title: 'Web design',
         category: 'Web',
-    },*/
+    },
 ];
 
 export const projectsNav = [
