@@ -25,13 +25,21 @@ export const projectsData = [
     {
         id: 3,
         image: Work5,
+        title: 'Vitor Flix',
+        category: 'web',
+        demoUrl: 'https://github.com/vitorlatorraca/udemy-react-movieflix',
+        bio: 'A project that I made with my react course at udemy.'
+    },
+    {
+        id: 4,
+        image: Work5,
         title: 'Time Tracker',
         category: 'College',
         demoUrl: 'https://github.com/vitorlatorraca/TImeTracker',
         bio: 'A final group project for the Programming Fundamentals course. It simulates a time tracker.'
     },
     {
-        id: 4,
+        id: 5,
         image: Work5,
         title: 'Soccer Quiz',
         category: 'College',
@@ -39,7 +47,7 @@ export const projectsData = [
         bio: 'A football quiz.'
     },
     {
-        id: 5,
+        id: 6,
         image: Work5,
         title: 'File Manager JAVA',
         category: 'College',
