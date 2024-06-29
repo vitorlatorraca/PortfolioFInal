@@ -4,6 +4,7 @@ import Work2 from "../../assets/image2.jpg";
 import Work3 from "../../assets/image3.png";
 import Work4 from "../../assets/image4.jpg";
 import Work5 from "../../assets/georgian.jpg";
+import vitorflix from "../../assets/vitorflix.png"
 
 export const projectsData = [
     {
@@ -24,7 +25,7 @@ export const projectsData = [
     },
     {
         id: 3,
-        image: Work5,
+        image: vitorflix,
         title: 'Vitor Flix',
         category: 'web',
         demoUrl: 'https://github.com/vitorlatorraca/udemy-react-movieflix',
@@ -42,7 +43,7 @@ export const projectsData = [
         id: 5,
         image: Work5,
         title: 'Soccer Quiz',
-        category: 'College',
+        category: 'College', 
         demoUrl: 'https://globo.com',
         bio: 'A football quiz.'
     },
