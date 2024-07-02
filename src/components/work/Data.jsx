@@ -21,7 +21,7 @@ export const projectsData = [
         title: 'Coffee Delivery',
         category: 'web',
         demoUrl: 'https://github.com/vitorlatorraca/coffeDelivery',
-        bio: 'An e-commerce platform for coffee, prioritizing Brazilian customers!!'
+        bio: 'An e-commerce platform for coffee, prioritizing Brazilian customers!!!'
     },
     {
         id: 3,
