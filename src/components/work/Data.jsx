@@ -29,7 +29,7 @@ export const projectsData = [
         title: 'Vitor Flix',
         category: 'web',
         demoUrl: 'https://github.com/vitorlatorraca/udemy-react-movieflix',
-        bio: 'A project that I made with my react course at udemy!'
+        bio: 'A project that I made with my react course at udemy.'
     },
     {
         id: 4,
