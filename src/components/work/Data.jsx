@@ -13,7 +13,7 @@ export const projectsData = [
         title: 'FutGram',
         category: 'App',
         demoUrl: 'https://github.com/vitorlatorraca/futGram',
-        bio: 'A social network with a database that enables users to create accounts, make posts, like other posts, and more utilities.'
+        bio: 'A social network with a database that enables users to create accounts, make posts, like other posts, and more utilities.!'
     },
     {
         id: 2,
