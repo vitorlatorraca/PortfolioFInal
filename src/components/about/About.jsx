@@ -18,8 +18,7 @@ const About = () => {
             
 
             <p className="about__description">
-              I am a highly motivated and creative professional with extensive experience in the field of web development
-                I am a passionate and dedicated web developer with over three years of experience in the field
+I'm a Computer Programming graduate looking for a Web Developer opportunity to grow and contribute with real impact.
             </p>
             
             <a download ="" href={CV} className="button button--flex">
