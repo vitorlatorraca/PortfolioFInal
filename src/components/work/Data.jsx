@@ -30,31 +30,7 @@ export const projectsData = [
         category: 'web',
         demoUrl: 'https://github.com/vitorlatorraca/udemy-react-movieflix',
         bio: 'A project that I made with my react course at Udemy!'
-    },
-    {
-        id: 4,
-        image: Work5,
-        title: 'Time Tracker',
-        category: 'College',
-        demoUrl: 'https://github.com/vitorlatorraca/TImeTracker',
-        bio: 'A final group project for the Programming Fundamentals course. It simulates a time tracker.'
-    },
-    {
-        id: 5,
-        image: Work5,
-        title: 'Soccer Quiz',
-        category: 'College', 
-        demoUrl: 'https://globo.com',
-        bio: 'A football quiz.'
-    },
-    {
-        id: 6,
-        image: Work5,
-        title: 'File Manager JAVA',
-        category: 'College',
-        demoUrl: 'https://github.com/vitorlatorraca/Major_Assingment_CSS',
-        bio: 'A Java assignment that opened my eyes to some programming fundamentals.'
-    },
+    }
 ];
 
 export const projectsNav = [
