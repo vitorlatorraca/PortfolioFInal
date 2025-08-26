@@ -1,12 +1,12 @@
 import React from 'react';
+import Work1 from "../../assets/image1.png";
 import Work3 from "../../assets/image3.png";
 import vitorflix from "../../assets/vitorflix.png";
-import kinton from "../../assets/kinton.png"; // ajuste o path se necessário
 
 export const projectsData = [
     {
         id: 1,
-        image: kinton,
+        image: Work1,
         title: 'Kinton Manager',
         category: 'web',
         demoUrl: 'https://github.com/vitorlatorraca/KintonManager',
