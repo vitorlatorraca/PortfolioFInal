@@ -1,19 +1,16 @@
 import React from 'react';
-import Work1 from "../../assets/image1.png";
-import Work2 from "../../assets/image2.jpg";
 import Work3 from "../../assets/image3.png";
-import Work4 from "../../assets/image4.jpg";
-import Work5 from "../../assets/georgian.jpg";
-import vitorflix from "../../assets/vitorflix.png"
+import vitorflix from "../../assets/vitorflix.png";
+import kinton from "../../assets/kinton.png"; // ajuste o path se necessário
 
 export const projectsData = [
     {
         id: 1,
-        image: Work1,
-        title: 'FutGram',
-        category: 'App',
-        demoUrl: 'https://github.com/vitorlatorraca/futGram',
-        bio: 'A social network with a database that enables users to create accounts, make posts, like other posts, and more utilities.!'
+        image: kinton,
+        title: 'Kinton Manager',
+        category: 'web',
+        demoUrl: 'https://github.com/vitorlatorraca/KintonManager',
+        bio: 'A full-stack loyalty app developed for Kinton Ramen, built with React, Node.js, Prisma, and MongoDB.',
     },
     {
         id: 2,
@@ -21,7 +18,7 @@ export const projectsData = [
         title: 'Coffee Delivery',
         category: 'web',
         demoUrl: 'https://github.com/vitorlatorraca/coffeDelivery',
-        bio: 'An e-commerce platform for coffee, prioritizing Brazilian customers!'
+        bio: 'An e-commerce platform for coffee, prioritizing Brazilian customers!',
     },
     {
         id: 3,
@@ -29,7 +26,7 @@ export const projectsData = [
         title: 'Vitor Flix',
         category: 'web',
         demoUrl: 'https://github.com/vitorlatorraca/udemy-react-movieflix',
-        bio: 'A project that I made with my react course at Udemy!'
+        bio: 'A project that I made during my React course on Udemy!',
     }
 ];
 
@@ -38,13 +35,7 @@ export const projectsNav = [
         name: 'all',
     },
     {
-        name: 'college',
-    },
-    {
-        name: 'app',
-    },
-    {
-        name: 'design',
+        name: 'web',
     },
 ];
 
@@ -53,7 +44,7 @@ const Project = ({ project }) => (
         <img src={project.image} alt={project.title} />
         <h2>{project.title}</h2>
         <p>{project.category}</p>
-        <a href={project.demoUrl}>Demo</a>
+        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">Demo</a>
         <p>{project.bio}</p>
     </div>
 );
