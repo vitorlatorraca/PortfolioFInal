@@ -56,7 +56,7 @@ const Data = () => {
                 </svg>
                 </h1>
                 <h3 className="home__subtitle">Web Developer</h3>
-                <p className="home__description"> I am a computer programming student looking for a co-op position that allows me to improve my knowledge.</p>
+                <p className="home__description"> Web Developer with a Computer Programming diploma, skilled in React, Node.js, and MongoDB, eager to deliver clean and efficient solutions.</p>
 
                 <a href="#contact" className="button button--flex">
                 Say Hello
