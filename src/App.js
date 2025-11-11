@@ -4,7 +4,6 @@ import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
-import Services from "./components/services/Services";
 import Work from "./components/work/Work";
 
 const App = () => {
@@ -38,7 +37,6 @@ const App = () => {
     <main className="main">
       <Home/>
       <Work/>
-      <Services />
       <Contact />
       <Footer />
     </main>

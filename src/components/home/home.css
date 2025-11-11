@@ -140,7 +140,7 @@
 .home__img-wrapper {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 250px;
     aspect-ratio: 1;
 }
 
@@ -252,7 +252,7 @@
     }
 
     .home__img-wrapper {
-        max-width: 350px;
+        max-width: 220px;
     }
 }
 
@@ -274,7 +274,7 @@
     }
 
     .home__img-wrapper {
-        max-width: 280px;
+        max-width: 200px;
         margin: 0 auto;
     }
 
@@ -316,7 +316,7 @@
     }
 
     .home__img-wrapper {
-        max-width: 250px;
+        max-width: 180px;
     }
 }
 
@@ -326,6 +326,6 @@
     }
 
     .home__img-wrapper {
-        max-width: 220px;
+        max-width: 160px;
     }
 }

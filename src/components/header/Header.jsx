@@ -25,12 +25,6 @@ const Header = () => {
                         </li>
 
                         <li className="nav__item">
-                            <a href="#services" className="nav__link" onClick={() => showMenu(false)}>
-                                <i className="uil uil-briefcase-alt nav__icon"></i> Services
-                            </a>
-                        </li>
-
-                        <li className="nav__item">
                             <a href="#contact" className="nav__link" onClick={() => showMenu(false)}>
                                 <i className="uil uil-message nav__icon"></i> Contact
                             </a>
