@@ -18,21 +18,60 @@
 .home__social-icon{
     font-size: 1.25rem;
     color: var(--title-color);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: transparent;
 }
 
 .home__social-icon:hover{
     color: var(--title-color-dark);
+    transform: translateY(-0.25rem);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .home__title {
     font-size: 45px;
     margin-bottom: var(--mb-0-25);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .home__hand {
     width: 38px;
     height: 38px;
     margin-left: 0.4rem;
+    animation: wave 2s ease-in-out infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    10%, 30% {
+        transform: rotate(14deg);
+    }
+    20% {
+        transform: rotate(-8deg);
+    }
+    40%, 60% {
+        transform: rotate(0deg);
+    }
 }
 
 .home__subtitle {
@@ -41,6 +80,7 @@
     padding-left: 5.4rem;
     font-weight: var(--font-normal);
     margin-bottom: var(--mb-1);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .home__subtitle::before {
@@ -56,6 +96,8 @@
 .home__description {
     max-width: 400px;
     margin-bottom: var(--mb-3);
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+    line-height: 1.6;
 }
 
 .home__img {
@@ -63,12 +105,26 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    box-shadow: inset 0 0 0 9px rgb(255, 255, 255 / 30%);
+    box-shadow: inset 0 0 0 9px rgba(255, 255, 255, 0.3), 0 10px 30px rgba(0, 0, 0, 0.1);
     order: 1;
     justify-self: center;
     width: 300px;
     height: 300px;
-    animation: profile__animate 8s ease-in-out infinite 1s;
+    animation: profile__animate 8s ease-in-out infinite 1s, fadeIn 1s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.home__img:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes profile__animate {
