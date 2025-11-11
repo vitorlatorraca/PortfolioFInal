@@ -117,6 +117,29 @@ textarea {
 body{
   background-color: var(--body-color);
   color: var(--text-color);
+  position: relative;
+}
+
+/* Geometric Background Pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, transparent 0%, rgba(102, 126, 234, 0.02) 50%, transparent 100%);
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
 }
 
 h1, h2, h3{
@@ -164,7 +187,12 @@ img {
 
 .section__title{
   font-size: var(--h1-font-size);
-  color: var(--title-color);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 0.5rem;
 }
 
 .section__subtitle{
@@ -194,16 +222,20 @@ img {
 /* BUTTONS */
 
 .button{
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   background-color: var(--title-color);
   color: var(--container-color);
-  padding: 1.25rem 2rem ;
-  border-radius: 1rem;
+  padding: 1rem 1.75rem;
+  border-radius: 0.75rem;
   font-weight: var(--font-medium);
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  font-size: var(--normal-font-size);
 }
 
 .button::before {

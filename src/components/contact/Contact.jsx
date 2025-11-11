@@ -1,98 +1,155 @@
-import React from "react";
+import React, { useState } from "react";
 import "./contact.css";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    window.location.href = `mailto:vitorlatorraca5@gmail.com?subject=${subject}&body=${body}`;
+    // Reset form
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
     <section className="contact section" id="contact">
-      <h2 className="section__title">Get in touch</h2>
-      <h2 className="section__subtitle">Contact me</h2>
+      <div className="contact__header">
+        <h2 className="section__title">Get in Touch</h2>
+        <span className="section__subtitle">
+          Let's work together and bring your ideas to life
+        </span>
+      </div>
 
       <div className="contact__container container grid">
-        <div className="contact__content">
-          <h3 className="contact__title">Talk to me!</h3>
+        <div className="contact__info-section">
+          <h3 className="contact__info-title">Let's Connect!</h3>
+          <p className="contact__info-description">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+          </p>
 
-          <div className="contact__info">
-            <div className="contact__card">
-              <i className="bx bx-mail-send contact__card-icon"></i>
-              <h3 className="contact__card-title">Email</h3>
-              <span className="contact__card-data">
-                vitorlatorraca5@gmail.com
-              </span>
+          <div className="contact__cards">
+            <a
+              href="mailto:vitorlatorraca5@gmail.com"
+              className="contact__card contact__card--email"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="contact__card-icon-wrapper">
+                <i className="uil uil-envelope-alt contact__card-icon"></i>
+              </div>
+              <div className="contact__card-content">
+                <h3 className="contact__card-title">Email</h3>
+                <span className="contact__card-data">vitorlatorraca5@gmail.com</span>
+              </div>
+              <i className="uil uil-arrow-right contact__card-arrow"></i>
+            </a>
 
-              <a
-                href="mailto:vitorlatorraca5@gmail.com"
-                className="contact__button"
-              >
-                Write me {""}{" "}
-                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-              </a>
-            </div>
-          </div>
+            <a
+              href="https://wa.me/16477136932"
+              className="contact__card contact__card--whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="contact__card-icon-wrapper">
+                <i className="uil uil-whatsapp contact__card-icon"></i>
+              </div>
+              <div className="contact__card-content">
+                <h3 className="contact__card-title">WhatsApp</h3>
+                <span className="contact__card-data">+1 (647) 713-6932</span>
+              </div>
+              <i className="uil uil-arrow-right contact__card-arrow"></i>
+            </a>
 
-          <div className="contact__info">
-            <div className="contact__card">
-              <i className="bx bxl-whatsapp contact__card-icon"></i>
-              <h3 className="contact__card-title">WhatsApp</h3>
-              <span className="contact__card-data">+16477136932</span>
-              <a href="https://wa.me/16477136932" className="contact__button">
-                Write me{" "}
-                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-              </a>
-            </div>
-          </div>
-
-          <div className="contact__info">
-            <div className="contact__card">
-              <i className="bx bxl-messenger contact__card-icon"></i>
-              <h3 className="contact__card-title">Instagram</h3>
-              <span className="contact__card-data">@vitorlatorraca</span>
-              <a
-                href="https://instagram.com/vitorlatorraca"
-                className="contact__button"
-              >
-                Write me{" "}
-                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-              </a>
-            </div>
+            <a
+              href="https://www.linkedin.com/in/vitor-latorraca-47430620a"
+              className="contact__card contact__card--linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="contact__card-icon-wrapper">
+                <i className="uil uil-linkedin-alt contact__card-icon"></i>
+              </div>
+              <div className="contact__card-content">
+                <h3 className="contact__card-title">LinkedIn</h3>
+                <span className="contact__card-data">Connect with me</span>
+              </div>
+              <i className="uil uil-arrow-right contact__card-arrow"></i>
+            </a>
           </div>
         </div>
 
-        <div className="contact__content">
-          <h3 className="contact__title">Write me about your project</h3>
+        <div className="contact__form-section">
+          <h3 className="contact__form-title">Send me a message</h3>
+          <p className="contact__form-description">
+            Fill out the form below and I'll get back to you as soon as possible.
+          </p>
 
-          <form className="contact__form">
-            <div className="contact__form-div">
-              <label className="contact__form-tag">Name</label>
+          <form className="contact__form" onSubmit={handleSubmit}>
+            <div className="contact__form-group">
+              <label htmlFor="name" className="contact__form-label">
+                Your Name
+              </label>
               <input
                 type="text"
+                id="name"
                 name="name"
                 className="contact__form-input"
-                placeholder="Insert your name"
+                placeholder="John Doe"
+                value={formData.name}
+                onChange={handleChange}
+                required
               />
             </div>
 
-            <div className="contact__form-div">
-              <label className="contact__form-tag">Mail</label>
+            <div className="contact__form-group">
+              <label htmlFor="email" className="contact__form-label">
+                Your Email
+              </label>
               <input
                 type="email"
+                id="email"
                 name="email"
                 className="contact__form-input"
-                placeholder="Insert your email"
+                placeholder="john.doe@example.com"
+                value={formData.email}
+                onChange={handleChange}
+                required
               />
             </div>
 
-            <div className="contact__form-div">
-              <label className="contact__form-tag">Project</label>
+            <div className="contact__form-group">
+              <label htmlFor="message" className="contact__form-label">
+                Your Message
+              </label>
               <textarea
-                name="project"
-                cols="30"
-                rows="10"
-                className="contact__form-input"
-                placeholder="Write your project "
+                id="message"
+                name="message"
+                rows="6"
+                className="contact__form-input contact__form-textarea"
+                placeholder="Tell me about your project..."
+                value={formData.message}
+                onChange={handleChange}
+                required
               ></textarea>
             </div>
 
-            <button className="button button--flex">
+            <button type="submit" className="button button--flex contact__submit">
               Send Message
               <svg
                 className="button__icon"

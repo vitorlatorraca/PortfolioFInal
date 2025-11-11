@@ -1,23 +1,24 @@
 import React from 'react'
 import Data from './Data'
-import ScrollDown from './ScrollDown'
 import Social from './Social'
 import "./home.css"
 
 const Home = () => {
   return (
     <section className="home section" id="home">
-        <div className="home__container container grid ">
-            <div className="home__content grid">
-                <Social/>
-
-                <div className="home__img"></div>
-
-                <Data/>
+        <div className="home__container container">
+            <div className="home__content">
+                <div className="home__left">
+                    <Data/>
+                    <Social/>
+                </div>
+                <div className="home__right">
+                    <div className="home__img-wrapper">
+                        <div className="home__img"></div>
+                        <div className="home__img-blur"></div>
+                    </div>
+                </div>
             </div>
-
-          <ScrollDown/>
-
         </div>
     </section>
   )
