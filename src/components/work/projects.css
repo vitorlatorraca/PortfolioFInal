@@ -181,6 +181,20 @@
     color: var(--container-color);
 }
 
+.project-card__button--video {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--container-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-card__button--video:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
 .dark-theme .project-card {
     border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);

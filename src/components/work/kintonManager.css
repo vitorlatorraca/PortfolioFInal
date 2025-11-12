@@ -151,6 +151,20 @@
     color: var(--container-color);
 }
 
+.kinton__button--video {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--container-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.kinton__button--video:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
 .dark-theme .kinton__tech-item {
     border-color: rgba(255, 255, 255, 0.2);
     background-color: var(--container-color);

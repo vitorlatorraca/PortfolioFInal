@@ -1,9 +1,23 @@
-import React from 'react';
-import KintonImage from '../../assets/image1.png';
+import React, { useState } from 'react';
+import KintonImage from '../../assets/kinton-manager.png';
 import FutwitterImage from '../../assets/image3.png';
+import VideoModal from './VideoModal';
 import './projects.css';
 
 const Projects = () => {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [selectedProjectVideos, setSelectedProjectVideos] = useState([]);
+
+  // Kinton Manager Videos
+  const kintonVideos = [
+    {
+      title: 'Kinton Manager - Demo',
+      url: '/videos/kinton-manager-demo.mp4',
+      type: 'local',
+      description: 'Complete demonstration of the Kinton Manager loyalty system.'
+    },
+  ];
+
   const projects = [
     {
       id: 1,
@@ -13,8 +27,9 @@ const Projects = () => {
       about: 'Kinton Manager is a comprehensive loyalty program management system built with modern web technologies. This application allows Kinton Ramen to track customer visits, manage rewards, and enhance customer retention through an intuitive and user-friendly interface.',
       technologies: ['React', 'Node.js', 'Prisma', 'MongoDB', 'Express', 'TypeScript'],
       githubUrl: 'https://github.com/vitorlatorraca/KintonManager',
-      demoUrl: 'https://github.com/vitorlatorraca/KintonManager',
+      demoUrl: 'https://kinton-manager.vercel.app/',
       image: KintonImage,
+      videos: kintonVideos,
       featured: true
     },
     {
@@ -100,6 +115,18 @@ const Projects = () => {
                       <i className="uil uil-external-link-alt"></i>
                       Live Demo
                     </a>
+                    {project.videos && project.videos.length > 0 && (
+                      <button
+                        onClick={() => {
+                          setSelectedProjectVideos(project.videos);
+                          setIsVideoModalOpen(true);
+                        }}
+                        className="button button--flex project-card__button project-card__button--video"
+                      >
+                        <i className="uil uil-play-circle"></i>
+                        Watch Videos
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -107,6 +134,15 @@ const Projects = () => {
           ))}
         </div>
       </div>
+
+      <VideoModal
+        videos={selectedProjectVideos}
+        isOpen={isVideoModalOpen}
+        onClose={() => {
+          setIsVideoModalOpen(false);
+          setSelectedProjectVideos([]);
+        }}
+      />
     </section>
   );
 };

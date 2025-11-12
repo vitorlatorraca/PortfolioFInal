@@ -1,5 +1,5 @@
 import React from 'react';
-import Work1 from "../../assets/image1.png";
+import Work1 from "../../assets/kinton-manager.png";
 import Work3 from "../../assets/image3.png";
 import vitorflix from "../../assets/vitorflix.png";
 
@@ -9,7 +9,7 @@ export const projectsData = [
         image: Work1,
         title: 'Kinton Manager',
         category: 'web',
-        demoUrl: 'https://github.com/vitorlatorraca/KintonManager',
+        demoUrl: 'https://kinton-manager.vercel.app/',
         bio: 'A full-stack loyalty app developed for Kinton Ramen, built with React, Node.js, Prisma, and MongoDB.',
     },
     {

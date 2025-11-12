@@ -1,8 +1,21 @@
-import React from 'react';
-import KintonImage from '../../assets/image1.png';
+import React, { useState } from 'react';
+import KintonImage from '../../assets/kinton-manager.png';
+import VideoModal from './VideoModal';
 import './kintonManager.css';
 
 const KintonManager = () => {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
+  // Kinton Manager Videos
+  const kintonVideos = [
+    {
+      title: 'Kinton Manager - Demo',
+      url: '/videos/kinton-manager-demo.mp4',
+      type: 'local',
+      description: 'Complete demonstration of the Kinton Manager loyalty system.'
+    }
+  ];
+
   return (
     <section className="kinton section" id="portfolio">
       <div className="kinton__container container">
@@ -65,7 +78,7 @@ const KintonManager = () => {
                 View on GitHub
               </a>
               <a 
-                href="https://github.com/vitorlatorraca/KintonManager" 
+                href="https://kinton-manager.vercel.app/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="button button--flex kinton__button kinton__button--secondary"
@@ -73,10 +86,25 @@ const KintonManager = () => {
                 <i className="uil uil-external-link-alt"></i>
                 Live Demo
               </a>
+              {kintonVideos.length > 0 && (
+                <button
+                  onClick={() => setIsVideoModalOpen(true)}
+                  className="button button--flex kinton__button kinton__button--video"
+                >
+                  <i className="uil uil-play-circle"></i>
+                  Watch Videos
+                </button>
+              )}
             </div>
           </div>
         </div>
       </div>
+
+      <VideoModal
+        videos={kintonVideos}
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+      />
     </section>
   );
 };
