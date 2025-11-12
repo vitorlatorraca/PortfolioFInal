@@ -1,6 +1,7 @@
 import React from 'react'
 import Data from './Data'
 import Social from './Social'
+import CodeTerminal from './CodeTerminal'
 import "./home.css"
 
 const Home = () => {
@@ -13,10 +14,7 @@ const Home = () => {
                     <Social/>
                 </div>
                 <div className="home__right">
-                    <div className="home__img-wrapper">
-                        <div className="home__img"></div>
-                        <div className="home__img-blur"></div>
-                    </div>
+                    <CodeTerminal />
                 </div>
             </div>
         </div>

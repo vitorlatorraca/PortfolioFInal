@@ -13,10 +13,10 @@ const Data = () => {
         </h1>
         
         <p className="home__description">
-            Passionate Full Stack Developer with a Computer Programming diploma. 
-            Specialized in <span className="home__highlight">React</span>, <span className="home__highlight">Node.js</span>, and <span className="home__highlight">MongoDB</span>, 
-            I craft clean, efficient, and scalable solutions that bring ideas to life. 
-            Always eager to learn and tackle new challenges!
+            Full Stack Developer turning coffee into code ☕ → 💻. 
+            Building scalable web applications with <span className="home__highlight">React</span>, <span className="home__highlight">Node.js</span>, and <span className="home__highlight">MongoDB</span>. 
+            Passionate about clean code, solving complex problems, and creating digital experiences that make a difference. 
+            Always learning, always coding, always shipping! 🚀
         </p>
 
         <div className="home__cta-buttons">
