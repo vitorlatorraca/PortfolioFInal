@@ -185,6 +185,12 @@ img {
   transform: translateY(0);
 }
 
+/* Projects section should be visible by default */
+.section.projects {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .section__title{
   font-size: var(--h1-font-size);
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
