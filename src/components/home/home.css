@@ -307,6 +307,14 @@
     .home__social {
         justify-content: center;
     }
+
+    .home__left {
+        text-align: center;
+    }
+
+    .home__data {
+        text-align: center;
+    }
 }
 
 /* For small devices */
