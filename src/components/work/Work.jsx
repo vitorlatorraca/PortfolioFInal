@@ -1,10 +1,10 @@
 import React from 'react'
-import KintonManager from './KintonManager'
+import Projects from './Projects'
 import "./work.css"
 
 const Work = () => {
   return (
-    <KintonManager />
+    <Projects />
   )
 }
 
