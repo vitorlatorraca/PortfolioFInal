@@ -22,18 +22,18 @@ const Footer = () => {
             </ul>
                 <div className="footer__social">
                 <a href="https://www.instagram.com/vitorlatorraca"
-        className="footer__social-link" target="_blank">
-            <i class="bx bxl-instagram"></i>
+        className="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i className="bx bxl-instagram"></i>
         </a>
 
         <a href="https://www.linkedin.com/in/vitor-latorraca-47430620a"
-        className="footer__social-link" target="_blank">
-        <i class="uil uil-dribbble"></i>
+        className="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i className="uil uil-linkedin-alt"></i>
         </a>
 
         <a href="https://github.com/vitorlatorraca"
-        className="footer__social-link" target="_blank">
-        <i class="uil uil-github-alt "></i>
+        className="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i className="uil uil-github-alt "></i>
         </a>
         </div>
         <span className="footer__copy"> All rigths reserved</span>
