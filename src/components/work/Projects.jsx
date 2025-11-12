@@ -1,5 +1,6 @@
 import React from 'react';
 import KintonImage from '../../assets/image1.png';
+import FutwitterImage from '../../assets/image3.png';
 import './projects.css';
 
 const Projects = () => {
@@ -25,7 +26,7 @@ const Projects = () => {
       technologies: ['React', 'Node.js', 'TypeScript', 'MongoDB', 'Express', 'Socket.io'],
       githubUrl: 'https://github.com/vitorlatorraca/futwitter',
       demoUrl: 'https://github.com/vitorlatorraca/futwitter',
-      image: null, // Placeholder - você pode adicionar uma imagem depois
+      image: FutwitterImage,
       featured: true
     }
   ];
