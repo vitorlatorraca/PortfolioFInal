@@ -52,13 +52,16 @@ const CodeTerminal = () => {
           <span className="code-terminal__dot code-terminal__dot--yellow"></span>
           <span className="code-terminal__dot code-terminal__dot--green"></span>
         </div>
-        <span className="code-terminal__title">terminal.js</span>
+        <span className="code-terminal__title">vitor@portfolio:~$</span>
       </div>
       <div className="code-terminal__body">
         <pre className="code-terminal__code">
           <code>{displayedText}</code>
           <span className="code-terminal__cursor">|</span>
         </pre>
+      </div>
+      <div className="code-terminal__footer">
+        <span className="code-terminal__status">● Ready</span>
       </div>
     </div>
   );
