@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import KintonImage from '../../assets/kinton-manager.png';
-import FutwitterImage from '../../assets/image3.png';
+import FutwitterImage from '../../assets/futwitter.png';
 import VideoModal from './VideoModal';
 import './projects.css';
 
