@@ -48,8 +48,17 @@ const Projects = () => {
 
   return (
     <section className="projects section" id="portfolio">
+      <div className="section-divider section-divider--top" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,0 L0,0 Z" fill="rgba(255, 214, 224, 0.4)"/>
+          <path d="M0,50 C240,90 480,10 720,50 C960,90 1200,10 1440,50 L1440,0 L0,0 Z" fill="rgba(224, 215, 255, 0.35)"/>
+        </svg>
+      </div>
       <div className="projects__container container">
         <div className="projects__header">
+          <svg className="section__doodle" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2 L13.8 9.2 L21 11 L13.8 12.8 L12 20 L10.2 12.8 L3 11 L10.2 9.2 Z" fill="#FF6B6B"/>
+          </svg>
           <h2 className="section__title">My Projects</h2>
           <span className="section__subtitle">
             Solutions developed with passion and dedication

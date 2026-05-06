@@ -20,15 +20,22 @@ const FloatingElements = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Create particles
+    const palette = [
+      { r: 255, g: 150, b: 170 },
+      { r: 180, g: 160, b: 240 },
+      { r: 150, g: 200, b: 250 },
+      { r: 255, g: 200, b: 150 },
+    ];
+
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 3 + 1;
-        this.speedX = Math.random() * 2 - 1;
-        this.speedY = Math.random() * 2 - 1;
-        this.opacity = Math.random() * 0.5 + 0.2;
+        this.size = Math.random() * 3.5 + 1.5;
+        this.speedX = (Math.random() * 2 - 1) * 0.6;
+        this.speedY = (Math.random() * 2 - 1) * 0.6;
+        this.opacity = Math.random() * 0.45 + 0.25;
+        this.color = palette[Math.floor(Math.random() * palette.length)];
       }
 
       update() {
@@ -42,7 +49,7 @@ const FloatingElements = () => {
       }
 
       draw() {
-        ctx.fillStyle = `rgba(102, 126, 234, ${this.opacity})`;
+        ctx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -65,7 +72,7 @@ const FloatingElements = () => {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 120) {
-            ctx.strokeStyle = `rgba(102, 126, 234, ${0.2 * (1 - distance / 120)})`;
+            ctx.strokeStyle = `rgba(180, 160, 220, ${0.18 * (1 - distance / 120)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
