@@ -5,39 +5,49 @@
 :root {
   --header-height: 3rem;
 
-  /* COLORS — Light, airy, illustration-portfolio palette */
-  --cream: #F0E6FF;
-  --cream-soft: #E8DBFF;
-  --pink-soft: #87CEEB;
-  --pink-pastel: #A8D8F0;
-  --lavender-soft: #4A90D9;
-  --lavender-pastel: #6BA8E0;
-  --sky-soft: #87CEEB;
-  --sky-pastel: #A8D8F0;
-  --mint-soft: #D4A843;
-  --mint-pastel: #E0BC6A;
-  --peach-soft: #D4A843;
-  --peach-pastel: #E0BC6A;
+  /* COLORS — Cream + Indigo + Coral
+     Variable names are kept for backward compatibility; values now reflect the
+     new palette. Semantic mapping:
+       cream*   → page / soft surfaces
+       pink*    → coral tints (CTA family)
+       lavender / sky → indigo tints (primary family)
+       mint*    → sage (success / subtle neutral)
+       peach*   → coral tints (alias)
+       accent   → coral primary
+       accent-purple → indigo primary
+  */
+  --cream: #FAF7F0;
+  --cream-soft: #F2EAD8;
+  --pink-soft: #ED9079;
+  --pink-pastel: #FDD9CC;
+  --lavender-soft: #3D52A0;
+  --lavender-pastel: #DDE3F3;
+  --sky-soft: #6B7FBF;
+  --sky-pastel: #DDE3F3;
+  --mint-soft: #8FA68E;
+  --mint-pastel: #D9E4D6;
+  --peach-soft: #ED9079;
+  --peach-pastel: #FDE7DF;
 
-  /* Bold accent */
-  --accent: #C0392B;
-  --accent-dark: #A93226;
-  --accent-warm: #D4A843;
-  --accent-purple: #4A90D9;
+  /* Bold accents */
+  --accent: #E07856;
+  --accent-dark: #C8623F;
+  --accent-warm: #ED9079;
+  --accent-purple: #3D52A0;
 
-  --title-color: #1B3A6B;
-  --title-color-dark: #0F2447;
-  --text-color: #2C4A7A;
-  --text-soft: #5A7AAA;
+  --title-color: #2C3E50;
+  --title-color-dark: #1A2638;
+  --text-color: #5A6B7C;
+  --text-soft: #8B96A5;
   --body-color: var(--cream);
-  --container-color: #F5F5F5;
-  --border-soft: rgba(27, 58, 107, 0.12);
+  --container-color: #FFFFFF;
+  --border-soft: rgba(61, 82, 160, 0.12);
 
-  /* Shadows */
-  --shadow-soft: 0 8px 24px rgba(118, 75, 162, 0.08);
-  --shadow-md: 0 12px 36px rgba(118, 75, 162, 0.12);
-  --shadow-lg: 0 20px 60px rgba(118, 75, 162, 0.18);
-  --shadow-coral: 0 10px 30px rgba(255, 107, 107, 0.28);
+  /* Shadows — tuned for indigo + coral */
+  --shadow-soft: 0 8px 24px rgba(61, 82, 160, 0.08);
+  --shadow-md: 0 12px 36px rgba(61, 82, 160, 0.12);
+  --shadow-lg: 0 20px 60px rgba(61, 82, 160, 0.18);
+  --shadow-coral: 0 10px 30px rgba(224, 120, 86, 0.28);
 
   /* FONT AND TYPOGRAPHY*/
   --body-font: "Poppins", sans-serif;
@@ -78,14 +88,14 @@
   --z-modal: 1000;
 }
 
-/* Dark theme retained but kept warmer/less stark — illustration vibe stays light by default */
+/* Dark theme — deep indigo bg with coral accents */
 .dark-theme {
-  --title-color: #87CEEB;
-  --title-color-dark: #A8D8F0;
-  --text-color: #C7E0FF;
-  --text-soft: #8AB8D8;
-  --body-color: #0A1628;
-  --container-color: #0F2040;
+  --title-color: #DDE3F3;
+  --title-color-dark: #FFFFFF;
+  --text-color: #C5CDD9;
+  --text-soft: #8B96A5;
+  --body-color: #1A2238;
+  --container-color: #243154;
   --border-soft: rgba(255, 255, 255, 0.08);
 }
 
@@ -137,16 +147,16 @@ body {
   position: relative;
 }
 
-/* Soft dot-grid + watercolor blobs background */
+/* Soft dot-grid + watercolor blobs background — indigo + coral wash */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse at 0% 0%, rgba(135, 206, 235, 0.35) 0%, transparent 60%),
-    radial-gradient(ellipse at 100% 0%, rgba(74, 144, 217, 0.25) 0%, transparent 55%),
-    radial-gradient(ellipse at 100% 100%, rgba(212, 168, 67, 0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 0% 100%, rgba(192, 57, 43, 0.15) 0%, transparent 50%);
+    radial-gradient(ellipse at 0% 0%, rgba(61, 82, 160, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse at 100% 0%, rgba(224, 120, 86, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 100%, rgba(61, 82, 160, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 0% 100%, rgba(224, 120, 86, 0.08) 0%, transparent 50%);
   background-size: 100% 100%;
   pointer-events: none;
   z-index: 0;
@@ -156,17 +166,17 @@ body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(27, 58, 107, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(61, 82, 160, 0.07) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
 .dark-theme body::before {
-  background-image:
-    radial-gradient(circle at 12% 18%, rgba(118, 75, 162, 0.18) 0%, transparent 35%),
-    radial-gradient(circle at 88% 82%, rgba(102, 126, 234, 0.18) 0%, transparent 35%);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(61, 82, 160, 0.30) 0%, transparent 40%),
+    radial-gradient(circle at 88% 82%, rgba(224, 120, 86, 0.18) 0%, transparent 40%);
 }
 
 .dark-theme body::after {
@@ -345,7 +355,7 @@ img {
 
 .button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 36px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 14px 36px rgba(224, 120, 86, 0.4);
 }
 
 .button__icon {
@@ -375,7 +385,7 @@ img {
 
 .pill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(118, 75, 162, 0.15);
+  box-shadow: 0 6px 16px rgba(61, 82, 160, 0.15);
 }
 
 /* Float animation utility */
