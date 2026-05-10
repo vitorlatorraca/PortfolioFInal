@@ -4,17 +4,23 @@ import FutwitterImage from '../../assets/futwitter.png';
 import VideoModal from './VideoModal';
 import './projects.css';
 
+const CATEGORIES = [
+  { id: 'all', label: 'All' },
+  { id: 'full-stack', label: 'Full-Stack' },
+  { id: 'frontend', label: 'Frontend' },
+];
+
 const Projects = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [selectedProjectVideos, setSelectedProjectVideos] = useState([]);
 
-  // Kinton Manager Videos
   const kintonVideos = [
     {
       title: 'Kinton Manager - Demo',
       url: '/videos/kinton-manager-demo.mp4',
       type: 'local',
-      description: 'Complete demonstration of the Kinton Manager loyalty system.'
+      description: 'Complete demonstration of the Kinton Manager loyalty system.',
     },
   ];
 
@@ -22,125 +28,142 @@ const Projects = () => {
     {
       id: 1,
       title: 'Kinton Manager',
-      badge: 'Featured Project',
-      description: 'A full-stack loyalty application developed for Kinton Ramen, revolutionizing customer engagement through innovative technology.',
-      about: 'Kinton Manager is a comprehensive loyalty program management system built with modern web technologies. This application allows Kinton Ramen to track customer visits, manage rewards, and enhance customer retention through an intuitive and user-friendly interface.',
+      description:
+        'Full-stack loyalty application for Kinton Ramen with customer tracking, rewards, and analytics.',
       technologies: ['React', 'Node.js', 'Prisma', 'MongoDB', 'Express', 'TypeScript'],
       githubUrl: 'https://github.com/vitorlatorraca/KintonManager',
       demoUrl: 'https://kinton-manager.vercel.app/',
       image: KintonImage,
       videos: kintonVideos,
-      featured: true
+      categories: ['full-stack'],
     },
     {
       id: 2,
       title: 'Futwitter',
-      badge: 'Featured Project',
-      description: 'A modern social media platform inspired by Twitter, built with cutting-edge technologies for real-time interactions and seamless user experience.',
-      about: 'Futwitter is a full-stack social media application that replicates and enhances the Twitter experience. The platform features real-time updates, user authentication, post creation, likes, comments, and a modern, responsive interface designed for optimal user engagement.',
+      description:
+        'Modern Twitter-inspired social platform with real-time updates, auth, posts, likes and comments.',
       technologies: ['React', 'Node.js', 'TypeScript', 'MongoDB', 'Express', 'Socket.io'],
       githubUrl: 'https://github.com/vitorlatorraca/futwitter',
       demoUrl: 'https://github.com/vitorlatorraca/futwitter',
       image: FutwitterImage,
-      featured: true
-    }
+      categories: ['full-stack'],
+    },
   ];
+
+  const filteredProjects =
+    activeCategory === 'all'
+      ? projects
+      : projects.filter((p) => p.categories.includes(activeCategory));
 
   return (
     <section className="projects section" id="portfolio">
-      <div className="section-divider section-divider--top" aria-hidden="true">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,0 L0,0 Z" fill="rgba(255, 214, 224, 0.4)"/>
-          <path d="M0,50 C240,90 480,10 720,50 C960,90 1200,10 1440,50 L1440,0 L0,0 Z" fill="rgba(224, 215, 255, 0.35)"/>
-        </svg>
-      </div>
       <div className="projects__container container">
-        <div className="projects__header">
-          <svg className="section__doodle" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 2 L13.8 9.2 L21 11 L13.8 12.8 L12 20 L10.2 12.8 L3 11 L10.2 9.2 Z" fill="#FF6B6B"/>
-          </svg>
-          <h2 className="section__title">My Projects</h2>
+        <header className="projects__header">
+          <h2 className="section__title">Portfolio</h2>
           <span className="section__subtitle">
             Solutions developed with passion and dedication
           </span>
-        </div>
+        </header>
 
-        <div className="projects__grid">
-          {projects.map((project, index) => (
-            <div key={project.id} className={`project-card ${project.featured ? 'project-card--featured' : ''}`}>
-              <div className="project-card__header">
-                <span className="project-card__badge">{project.badge}</span>
-                <h3 className="project-card__title">{project.title}</h3>
-                <p className="project-card__subtitle">{project.description}</p>
+        <div className="projects__layout">
+          <aside className="projects__sidebar" aria-label="Project categories">
+            <ul className="projects__filter-list">
+              {CATEGORIES.map((cat) => (
+                <li key={cat.id}>
+                  <button
+                    type="button"
+                    className={`projects__filter-btn ${
+                      activeCategory === cat.id ? 'projects__filter-btn--active' : ''
+                    }`}
+                    onClick={() => setActiveCategory(cat.id)}
+                  >
+                    {cat.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </aside>
+
+          <div className="projects__main">
+            {filteredProjects.length === 0 ? (
+              <div className="projects__empty">
+                <i className="uil uil-folder-open projects__empty-icon"></i>
+                <p>No projects in this category yet — stay tuned!</p>
               </div>
-
-              <div className="project-card__content">
-                {project.image && (
-                  <div className="project-card__image-wrapper">
-                    <div className="project-card__image-container">
-                      <img 
-                        src={project.image} 
-                        alt={project.title} 
-                        className="project-card__image"
+            ) : (
+              <div className="projects__grid">
+                {filteredProjects.map((project) => (
+                  <article key={project.id} className="project-tile">
+                    <div className="project-tile__image-wrap">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="project-tile__image"
                       />
-                      <div className="project-card__image-overlay"></div>
+                      <div className="project-tile__overlay">
+                        <h3 className="project-tile__title">{project.title}</h3>
+                        <p className="project-tile__description">
+                          {project.description}
+                        </p>
+                        <div className="project-tile__tech">
+                          {project.technologies.slice(0, 4).map((tech) => (
+                            <span key={tech} className="project-tile__tech-item">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="project-tile__actions">
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-tile__action"
+                            aria-label="View on GitHub"
+                          >
+                            <i className="uil uil-github-alt"></i>
+                          </a>
+                          <a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-tile__action"
+                            aria-label="Live demo"
+                          >
+                            <i className="uil uil-external-link-alt"></i>
+                          </a>
+                          {project.videos && project.videos.length > 0 && (
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setSelectedProjectVideos(project.videos);
+                                setIsVideoModalOpen(true);
+                              }}
+                              className="project-tile__action"
+                              aria-label="Watch videos"
+                            >
+                              <i className="uil uil-play-circle"></i>
+                            </button>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                )}
-
-                <div className="project-card__details">
-                  <div className="project-card__description">
-                    <h4 className="project-card__details-title">About the Project</h4>
-                    <p className="project-card__text">{project.about}</p>
-                  </div>
-
-                  <div className="project-card__tech">
-                    <h4 className="project-card__details-title">Technologies Used</h4>
-                    <div className="project-card__tech-list">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className="project-card__tech-item">
-                          {tech}
-                        </span>
-                      ))}
+                    <div className="project-tile__caption">
+                      <h3 className="project-tile__caption-title">{project.title}</h3>
+                      <span className="project-tile__caption-tag">
+                        {project.categories[0].replace('-', ' ')}
+                      </span>
                     </div>
-                  </div>
-
-                  <div className="project-card__links">
-                    <a 
-                      href={project.githubUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="button button--flex project-card__button"
-                    >
-                      <i className="uil uil-github-alt"></i>
-                      View on GitHub
-                    </a>
-                    <a 
-                      href={project.demoUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="button button--flex project-card__button project-card__button--secondary"
-                    >
-                      <i className="uil uil-external-link-alt"></i>
-                      Live Demo
-                    </a>
-                    {project.videos && project.videos.length > 0 && (
-                      <button
-                        onClick={() => {
-                          setSelectedProjectVideos(project.videos);
-                          setIsVideoModalOpen(true);
-                        }}
-                        className="button button--flex project-card__button project-card__button--video"
-                      >
-                        <i className="uil uil-play-circle"></i>
-                        Watch Videos
-                      </button>
-                    )}
-                  </div>
-                </div>
+                  </article>
+                ))}
               </div>
+            )}
+
+            <div className="projects__pagination" aria-hidden="true">
+              <span className="projects__page-dot"></span>
+              <span className="projects__page-dot projects__page-dot--active"></span>
+              <span className="projects__page-dot"></span>
             </div>
-          ))}
+          </div>
         </div>
       </div>
 
@@ -157,4 +180,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

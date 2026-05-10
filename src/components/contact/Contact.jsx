@@ -87,59 +87,69 @@ const Contact = () => {
 
       <div className="contact__container container grid">
         <div className="contact__info-section">
-          <h3 className="contact__info-title">Let's Connect!</h3>
-          <p className="contact__info-description">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-          </p>
+          <div className="contact__info-block">
+            <h3 className="contact__info-title">Contact Info</h3>
+            <ul className="contact__list">
+              <li>
+                <a
+                  href="mailto:vitorlatorraca5@gmail.com"
+                  className="contact__list-item"
+                >
+                  <i className="uil uil-envelope-alt contact__list-icon"></i>
+                  <span>vitorlatorraca5@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/16477136932"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact__list-item"
+                >
+                  <i className="uil uil-whatsapp contact__list-icon"></i>
+                  <span>+1 (647) 713-6932</span>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-          <div className="contact__cards">
-            <a
-              href="mailto:vitorlatorraca5@gmail.com"
-              className="contact__card contact__card--email"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="contact__card-icon-wrapper">
-                <i className="uil uil-envelope-alt contact__card-icon"></i>
-              </div>
-              <div className="contact__card-content">
-                <h3 className="contact__card-title">Email</h3>
-                <span className="contact__card-data">vitorlatorraca5@gmail.com</span>
-              </div>
-              <i className="uil uil-arrow-right contact__card-arrow"></i>
-            </a>
-
-            <a
-              href="https://wa.me/16477136932"
-              className="contact__card contact__card--whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="contact__card-icon-wrapper">
-                <i className="uil uil-whatsapp contact__card-icon"></i>
-              </div>
-              <div className="contact__card-content">
-                <h3 className="contact__card-title">WhatsApp</h3>
-                <span className="contact__card-data">+1 (647) 713-6932</span>
-              </div>
-              <i className="uil uil-arrow-right contact__card-arrow"></i>
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/vitor-latorraca-47430620a"
-              className="contact__card contact__card--linkedin"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="contact__card-icon-wrapper">
-                <i className="uil uil-linkedin-alt contact__card-icon"></i>
-              </div>
-              <div className="contact__card-content">
-                <h3 className="contact__card-title">LinkedIn</h3>
-                <span className="contact__card-data">Connect with me</span>
-              </div>
-              <i className="uil uil-arrow-right contact__card-arrow"></i>
-            </a>
+          <div className="contact__info-block">
+            <h3 className="contact__info-title">Social Handles</h3>
+            <ul className="contact__list">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/vitor-latorraca-47430620a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact__list-item"
+                >
+                  <i className="uil uil-linkedin-alt contact__list-icon"></i>
+                  <span>vitor-latorraca</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/vitorlatorraca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact__list-item"
+                >
+                  <i className="uil uil-github-alt contact__list-icon"></i>
+                  <span>vitorlatorraca</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/vitorlatorraca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact__list-item"
+                >
+                  <i className="bx bxl-instagram contact__list-icon"></i>
+                  <span>vitorlatorraca</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 

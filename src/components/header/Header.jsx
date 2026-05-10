@@ -19,14 +19,20 @@ const Header = () => {
                         </li>
 
                         <li className="nav__item">
+                            <a href="#about" className="nav__link" onClick={() => showMenu(false)}>
+                                <i className="uil uil-user nav__icon"></i> About Me
+                            </a>
+                        </li>
+
+                        <li className="nav__item">
                             <a href="#portfolio" className="nav__link" onClick={() => showMenu(false)}>
                                 <i className="uil uil-scenery nav__icon"></i> Portfolio
                             </a>
                         </li>
 
-                        <li className="nav__item">
-                            <a href="#contact" className="nav__link" onClick={() => showMenu(false)}>
-                                <i className="uil uil-message nav__icon"></i> Contact
+                        <li className="nav__item nav__item--cta">
+                            <a href="#contact" className="nav__cta" onClick={() => showMenu(false)}>
+                                <i className="uil uil-message nav__icon"></i> Contact Me
                             </a>
                         </li>
                     </ul>

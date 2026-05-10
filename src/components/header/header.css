@@ -109,6 +109,36 @@
     display: none;
 }
 
+/* Outlined CTA button — "Contact Me" */
+.nav__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--display-font);
+    font-weight: var(--font-bold);
+    font-size: var(--small-font-size);
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    background: transparent;
+    transition: all 0.3s ease;
+    letter-spacing: 0.01em;
+}
+
+.nav__cta:hover {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-warm) 100%);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-coral);
+    border-color: transparent;
+}
+
+.nav__item--cta {
+    display: flex;
+    align-items: center;
+}
+
 /* BREAKPOINTS */
 @media screen and (max-width: 768px) {
     .header {
@@ -147,8 +177,28 @@
 
     .nav__list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    .nav__cta {
+        flex-direction: column;
+        padding: 0;
+        border: none;
+        font-size: var(--small-font-size);
+        background: transparent;
+        color: var(--title-color);
+    }
+
+    .nav__cta:hover {
+        background: transparent;
+        color: var(--accent);
+        transform: none;
+        box-shadow: none;
+    }
+
+    .nav__item--cta {
+        display: block;
     }
 
     .nav__icon {
