@@ -3,36 +3,38 @@ import "./header.css";
 import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
-    /* TOGGLE MENU*/
-    const[Toggle, showMenu] = useState(false);
+    const [Toggle, showMenu] = useState(false);
+
     return (
         <header className="header">
             <nav className="nav container">
-                <a href="#home" className="nav__logo">Latorraca</a>
+                <a href="#home" className="nav__logo">
+                    <span className="nav__logo-mark">[</span>vitor<span className="nav__logo-mark">]</span>
+                </a>
 
                 <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
-                    <ul className="nav__list grid">
+                    <ul className="nav__list">
                         <li className="nav__item">
                             <a href="#home" className="nav__link active-link" onClick={() => showMenu(false)}>
-                                <i className="uil uil-estate nav__icon"></i> Home
+                                <span className="nav__link-num">01</span> home
                             </a>
                         </li>
 
                         <li className="nav__item">
                             <a href="#about" className="nav__link" onClick={() => showMenu(false)}>
-                                <i className="uil uil-user nav__icon"></i> About Me
+                                <span className="nav__link-num">02</span> about
                             </a>
                         </li>
 
                         <li className="nav__item">
                             <a href="#portfolio" className="nav__link" onClick={() => showMenu(false)}>
-                                <i className="uil uil-scenery nav__icon"></i> Portfolio
+                                <span className="nav__link-num">03</span> projects
                             </a>
                         </li>
 
                         <li className="nav__item nav__item--cta">
                             <a href="#contact" className="nav__cta" onClick={() => showMenu(false)}>
-                                <i className="uil uil-message nav__icon"></i> Contact Me
+                                contact <span className="nav__cta-arrow">↗</span>
                             </a>
                         </li>
                     </ul>
@@ -40,15 +42,20 @@ const Header = () => {
                     <i className="uil uil-times nav__close" onClick={() => showMenu(!Toggle)} aria-label="Close menu"></i>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div className="nav__actions">
                     <ThemeToggle />
-                    <div className="nav__toggle" onClick={() => showMenu(!Toggle)} aria-label="Toggle menu">
+                    <button
+                        type="button"
+                        className="nav__toggle"
+                        onClick={() => showMenu(!Toggle)}
+                        aria-label="Toggle menu"
+                    >
                         <i className="uil uil-apps"></i>
-                    </div>
+                    </button>
                 </div>
             </nav>
         </header>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

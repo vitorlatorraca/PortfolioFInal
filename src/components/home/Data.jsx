@@ -5,29 +5,33 @@ const Data = () => {
   return (
     <div className="home__hero">
       <div className="home__data">
-        <span className="home__greeting">Hi, my name is</span>
+        <span className="home__greeting">{'// hello, world'}</span>
 
         <h1 className="home__title">
-          <span className="home__title-main">Vitor</span>
-          <span className="home__title-gradient">Latorraca</span>
+          <span className="home__title-line">vitor</span>
+          <span className="home__title-line home__title-line--accent">latorraca.</span>
         </h1>
 
-        <span className="home__role-pill">
-          Full Stack Developer / Web Engineer
-        </span>
-
-        <p className="home__description">
-          Computer Programming graduate building scalable web applications with
-          <span className="home__highlight">React</span>,
-          <span className="home__highlight">Node.js</span>, and
-          <span className="home__highlight">MongoDB</span>.
-          Passionate about clean code, solving complex problems, and shipping
-          digital experiences that make a difference.
+        <p className="home__role">
+          full-stack developer / web engineer
         </p>
 
-        <a href="#about" className="home__learn-more">
-          Learn More <span className="home__learn-more-link">About Me</span>
-        </a>
+        <p className="home__description">
+          Computer Programming graduate. I build web applications with{' '}
+          <span className="home__highlight">React</span>,{' '}
+          <span className="home__highlight">Node.js</span>, and{' '}
+          <span className="home__highlight">MongoDB</span>. I care about clean
+          code, scalable systems, and shipping things that work.
+        </p>
+
+        <div className="home__cta-row">
+          <a href="#portfolio" className="button">
+            see projects <span className="home__cta-arrow">→</span>
+          </a>
+          <a href="#about" className="home__inline-link">
+            learn more about me
+          </a>
+        </div>
       </div>
 
       <div className="home__visual">
@@ -35,8 +39,8 @@ const Data = () => {
           <img src={vitorImg} alt="Vitor Latorraca" className="home__avatar" />
         </div>
         <div className="home__location">
-          <i className="uil uil-map-marker home__location-icon"></i>
-          <span className="home__location-text">Toronto, Canada</span>
+          <span className="home__location-bullet">●</span>
+          <span>toronto / canada</span>
         </div>
       </div>
     </div>

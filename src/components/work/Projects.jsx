@@ -5,9 +5,9 @@ import VideoModal from './VideoModal';
 import './projects.css';
 
 const CATEGORIES = [
-  { id: 'all', label: 'All' },
-  { id: 'full-stack', label: 'Full-Stack' },
-  { id: 'frontend', label: 'Frontend' },
+  { id: 'all', label: 'all' },
+  { id: 'full-stack', label: 'full-stack' },
+  { id: 'frontend', label: 'frontend' },
 ];
 
 const Projects = () => {
@@ -27,9 +27,10 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      year: '2024',
       title: 'Kinton Manager',
       description:
-        'Full-stack loyalty application for Kinton Ramen with customer tracking, rewards, and analytics.',
+        'Full-stack loyalty application for Kinton Ramen with customer tracking, rewards and analytics.',
       technologies: ['React', 'Node.js', 'Prisma', 'MongoDB', 'Express', 'TypeScript'],
       githubUrl: 'https://github.com/vitorlatorraca/KintonManager',
       demoUrl: 'https://kinton-manager.vercel.app/',
@@ -39,6 +40,7 @@ const Projects = () => {
     },
     {
       id: 2,
+      year: '2024',
       title: 'Futwitter',
       description:
         'Modern Twitter-inspired social platform with real-time updates, auth, posts, likes and comments.',
@@ -59,112 +61,99 @@ const Projects = () => {
     <section className="projects section" id="portfolio">
       <div className="projects__container container">
         <header className="projects__header">
-          <h2 className="section__title">Portfolio</h2>
-          <span className="section__subtitle">
-            Solutions developed with passion and dedication
-          </span>
+          <span className="section__number">03 / projects</span>
+          <h2 className="section__title">selected work.</h2>
         </header>
 
-        <div className="projects__layout">
-          <aside className="projects__sidebar" aria-label="Project categories">
-            <ul className="projects__filter-list">
-              {CATEGORIES.map((cat) => (
-                <li key={cat.id}>
-                  <button
-                    type="button"
-                    className={`projects__filter-btn ${
-                      activeCategory === cat.id ? 'projects__filter-btn--active' : ''
-                    }`}
-                    onClick={() => setActiveCategory(cat.id)}
-                  >
-                    {cat.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </aside>
-
-          <div className="projects__main">
-            {filteredProjects.length === 0 ? (
-              <div className="projects__empty">
-                <i className="uil uil-folder-open projects__empty-icon"></i>
-                <p>No projects in this category yet — stay tuned!</p>
-              </div>
-            ) : (
-              <div className="projects__grid">
-                {filteredProjects.map((project) => (
-                  <article key={project.id} className="project-tile">
-                    <div className="project-tile__image-wrap">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="project-tile__image"
-                      />
-                      <div className="project-tile__overlay">
-                        <h3 className="project-tile__title">{project.title}</h3>
-                        <p className="project-tile__description">
-                          {project.description}
-                        </p>
-                        <div className="project-tile__tech">
-                          {project.technologies.slice(0, 4).map((tech) => (
-                            <span key={tech} className="project-tile__tech-item">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="project-tile__actions">
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-tile__action"
-                            aria-label="View on GitHub"
-                          >
-                            <i className="uil uil-github-alt"></i>
-                          </a>
-                          <a
-                            href={project.demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-tile__action"
-                            aria-label="Live demo"
-                          >
-                            <i className="uil uil-external-link-alt"></i>
-                          </a>
-                          {project.videos && project.videos.length > 0 && (
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setSelectedProjectVideos(project.videos);
-                                setIsVideoModalOpen(true);
-                              }}
-                              className="project-tile__action"
-                              aria-label="Watch videos"
-                            >
-                              <i className="uil uil-play-circle"></i>
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="project-tile__caption">
-                      <h3 className="project-tile__caption-title">{project.title}</h3>
-                      <span className="project-tile__caption-tag">
-                        {project.categories[0].replace('-', ' ')}
-                      </span>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            )}
-
-            <div className="projects__pagination" aria-hidden="true">
-              <span className="projects__page-dot"></span>
-              <span className="projects__page-dot projects__page-dot--active"></span>
-              <span className="projects__page-dot"></span>
-            </div>
-          </div>
+        <div className="projects__filter" role="tablist" aria-label="Project categories">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat.id}
+              type="button"
+              role="tab"
+              aria-selected={activeCategory === cat.id}
+              className={`projects__filter-btn ${
+                activeCategory === cat.id ? 'projects__filter-btn--active' : ''
+              }`}
+              onClick={() => setActiveCategory(cat.id)}
+            >
+              {cat.label}
+            </button>
+          ))}
         </div>
+
+        {filteredProjects.length === 0 ? (
+          <div className="projects__empty">
+            <span>{'// no projects in this category yet — stay tuned.'}</span>
+          </div>
+        ) : (
+          <ol className="projects__list">
+            {filteredProjects.map((project, idx) => (
+              <li key={project.id} className="project-row">
+                <div className="project-row__index">
+                  {String(idx + 1).padStart(2, '0')}
+                </div>
+
+                <div className="project-row__main">
+                  <div className="project-row__head">
+                    <h3 className="project-row__title">{project.title}</h3>
+                    <span className="project-row__year">{project.year}</span>
+                  </div>
+                  <p className="project-row__desc">{project.description}</p>
+                  <ul className="project-row__tech">
+                    {project.technologies.map((t) => (
+                      <li key={t} className="project-row__tech-item">{t}</li>
+                    ))}
+                  </ul>
+                  <div className="project-row__links">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-row__link"
+                    >
+                      <i className="uil uil-github-alt"></i> github ↗
+                    </a>
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-row__link"
+                    >
+                      <i className="uil uil-external-link-alt"></i> live demo ↗
+                    </a>
+                    {project.videos && project.videos.length > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSelectedProjectVideos(project.videos);
+                          setIsVideoModalOpen(true);
+                        }}
+                        className="project-row__link project-row__link--btn"
+                      >
+                        <i className="uil uil-play-circle"></i> watch videos
+                      </button>
+                    )}
+                  </div>
+                </div>
+
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-row__preview"
+                  aria-label={`Preview ${project.title}`}
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-row__image"
+                  />
+                </a>
+              </li>
+            ))}
+          </ol>
+        )}
       </div>
 
       <VideoModal

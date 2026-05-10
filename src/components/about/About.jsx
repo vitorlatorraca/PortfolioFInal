@@ -3,64 +3,64 @@ import CV from "../../assets/Vitor-Latorraca.pdf";
 import "./about.css";
 
 const ACTIVE_SKILLS = [
-  'React',
-  'Node.js',
-  'MongoDB',
-  'Express',
-  'TypeScript',
-  'JavaScript',
-  'HTML / CSS',
-  'Git',
+  'react',
+  'node.js',
+  'mongodb',
+  'express',
+  'typescript',
+  'javascript',
+  'html / css',
+  'git',
 ];
 
-const LEARNING_SKILLS = ['Docker', 'AWS', 'Next.js', 'GraphQL'];
-
-const SkillCard = ({ name, locked = false }) => (
-  <div className={`about__skill-card ${locked ? 'about__skill-card--locked' : ''}`}>
-    <span className="about__skill-icon" aria-hidden="true">
-      {locked ? (
-        <i className="uil uil-lock"></i>
-      ) : (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2 L17 9 L22 12 L17 15 L12 22 L7 15 L2 12 L7 9 Z" fill="currentColor"/>
-        </svg>
-      )}
-    </span>
-    <span className="about__skill-name">{locked ? 'Learning…' : name}</span>
-  </div>
-);
+const LEARNING_SKILLS = ['docker', 'aws', 'next.js', 'graphql'];
 
 const About = () => {
   return (
     <section className="about section" id="about">
       <div className="about__container container">
         <header className="about__header">
-          <h2 className="section__title">About Me</h2>
-          <p className="about__subtitle">
-            I'm <strong>Vitor Latorraca</strong>, Full Stack Developer / Web Engineer
-          </p>
-          <p className="about__description">
-            Computer Programming graduate with a passion for building modern web
-            applications. I specialize in the JavaScript ecosystem — React on the
-            frontend and Node.js / Express on the backend — and I love turning
-            complex requirements into clean, scalable, user-friendly products.
-            Always learning, always shipping.
-          </p>
-          <a download="" href={CV} className="button button--flex about__cv">
-            Download my CV
-            <i className="uil uil-import about__cv-icon"></i>
-          </a>
+          <span className="section__number">02 / about</span>
+          <h2 className="section__title">about me.</h2>
         </header>
 
-        <div className="about__skills">
-          <h3 className="about__skills-title">Skills</h3>
-          <div className="about__skills-grid">
-            {ACTIVE_SKILLS.map((skill) => (
-              <SkillCard key={skill} name={skill} />
-            ))}
-            {LEARNING_SKILLS.map((skill, i) => (
-              <SkillCard key={`locked-${i}`} name={skill} locked />
-            ))}
+        <div className="about__body">
+          <div className="about__text">
+            <p className="about__lead">
+              I'm <strong>Vitor Latorraca</strong> — a Computer Programming
+              graduate based in Toronto. I build modern web applications across
+              the JavaScript stack and care about clean, scalable code.
+            </p>
+            <p className="about__paragraph">
+              I work primarily with React on the frontend and Node.js / Express
+              on the backend, with a soft spot for TypeScript and well-designed
+              APIs. My focus is on turning complex requirements into clear,
+              maintainable software that ships and lasts.
+            </p>
+
+            <a download="" href={CV} className="button about__cv">
+              download cv <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <div className="about__skills">
+            <h3 className="about__skills-title">{'// stack'}</h3>
+            <ul className="about__skills-list">
+              {ACTIVE_SKILLS.map((skill) => (
+                <li key={skill} className="about__skill">
+                  {skill}
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="about__skills-title about__skills-title--learning">{'// learning'}</h3>
+            <ul className="about__skills-list">
+              {LEARNING_SKILLS.map((skill) => (
+                <li key={skill} className="about__skill about__skill--learning">
+                  {skill}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
